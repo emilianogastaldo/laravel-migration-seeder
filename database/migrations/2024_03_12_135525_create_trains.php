@@ -17,8 +17,10 @@ return new class extends Migration
             $table->string('company', 20);
             $table->string('depature_station', 40);
             $table->string('arrive_station', 40);
-            $table->timestamp('departure_time', 0)->nullable();
-            $table->timestamp('arrive_time', 0)->nullable();
+            $table->date('departure_date')->nullable();
+            $table->time('departure_time')->nullable();
+            $table->date('arrive_date')->nullable();
+            $table->time('arrive_time')->nullable();
             $table->string('train_code', 10)->unique();
             $table->tinyInteger('carriage_code');
             $table->boolean('in_time');
