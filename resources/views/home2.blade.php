@@ -2,28 +2,14 @@
 
 @section('main-content')
 
-<ul>
-  @foreach ($trains as $train)
-  <li>
-    {{$train['company']}}
-  </li>
-  @endforeach
-</ul>
-<table class="table">
-  <thead>
-    <tr>
-      @foreach ($trains as $key => $train)
-      <th scope="col">{{$train}}</th>
-      @foreach ($train as $key => $value )
-
-      @endforeach
-
-      @endforeach
-
-    </tr>
-  </thead>
-  <tbody>
-
-  </tbody>
-</table>
+<div>
+  @foreach ($trains as $index => $train)
+  <p>{{dump($train)}}</p>
+  Treno numero {{$index + 1}} :
+    @foreach ($train as $key => $value )
+      <p>KEY: {{$key}} Value: {{$value}}</p>
+    @endforeach
+    <hr>
+  @endforeach 
+</div>
 @endsection

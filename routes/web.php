@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Train;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class)->name('home');
+
+Route::get('/home2', function () {
+    $trains = Train::all();
+    return view('home2', compact('trains'));
+});
